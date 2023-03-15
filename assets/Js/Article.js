@@ -49,14 +49,19 @@ fetch('http://localhost:4000/api/v1/blogs')
 
 
 function deleteBlog(blogId)  {
-    fetch('http://localhost:4000/api/v1/blogs',
+    fetch(`http://localhost:4000/api/v1/blogs`,
     {
         method: "DELETE"
     })
     .then((response) => response.json())
     .then((data) => {
         // functionalities of delete
+        console.log(data)
+        location.reload();
 
     })
+    .catch((err) => {
+        alert(err)
+    });
 
 }
