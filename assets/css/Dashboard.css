@@ -29,7 +29,7 @@ h1 {
   }
   
   button {
-    background-color: #e74c3c;
+    background-color: #ec1839;
     color: #fff;
     border: none;
     padding: 5px 10px;
@@ -37,8 +37,16 @@ h1 {
     cursor: pointer;
     margin-bottom: 20px;
   }
+  .btnII
+  {
+    background-color: orange;
+  }
   
   
   button:hover {
-    background-color: #c0392b;
+    transform: scaleX(1.2);
+  }
+  .btnII:hover{
+    background-color: #FFD580;
+
   }
