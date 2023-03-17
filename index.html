@@ -108,8 +108,8 @@
 
                             <div class="row">
                                 <div class="buttons padd-15">
-                                    <a href="#" class="btn">Download CV</a>
-                                    <a href="#" class="btn hire-me">Hire me</a>
+                                    <a href="https://docs.google.com/document/d/17fV0Gj57_X6WvYouLGdy_AHQvs6nmfYK25-gMf4kdIo/edit?usp=sharing" class="btn">Download CV</a>
+                                    <a href="#contact" class="btn hire-me">Hire me</a>
                                 </div>
                             </div>
                         </div>
@@ -379,27 +379,27 @@
                         <div class="contact-form">
                             <div class="row">
                                 <div class="form-item col-6 padd-15">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="" placeholder="Your Names">
+                                    <div class="form-group" onsubmit="unescape">
+                                        <input type="text" class="form-control" id="" placeholder="Your Names" required>
                                     </div>
                                 </div>
                                 <div class="form-item col-6 padd-15">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="" placeholder="Your Email Adddress">
+                                        <input type="email" class="form-control" id="" placeholder="Your Email Adddress" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="" placeholder="Subject">
+                                        <input type="text" class="form-control" id="" placeholder="Subject" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 padd-15">
                                     <div class="form-group">
-                                       <textarea name="" id="" class="" placeholder="Your Message"></textarea>
+                                       <textarea name="" id="" class="" placeholder="Your Message" required></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -456,5 +456,23 @@
 
 </script>
 <script src="./assets/Js/blogs.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script>
+    function sendEmail() 
+    {
+        Email.send({
+          Host : "smtp.elasticemail.com",
+          Username : "username",
+          Password : "password",
+          To : 'them@website.com',
+          From : "you@isp.com",
+          Subject : "This is the subject", 
+          Body : "And this is the body"
+          }).then(
+           message => alert(message)
+        );
+         
+    }
+</script>
 </body>
 </html>

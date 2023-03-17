@@ -24,9 +24,12 @@ form.addEventListener("submit", (event) => {
     })
     .then((response) => {
         return response.json()
+        
     })
     .then((data) => {
         alert(data.message)
+        location.replace('AllBlogs.html')
+
     })
     .catch(error => alert(error))
 

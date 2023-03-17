@@ -1,12 +1,11 @@
 const clientBlog = document.getElementById("CLIENT");
-console.log(clientBlog)
 
 // interacting with our get blogs endpoint
 
 fetch('http://localhost:4000/api/v1/blogs')
 .then((response) => response.json())
 .then((blogs) => {
-    console.log(blogs)
+    
     blogs.data.forEach(blog => {
 
         clientBlog.innerHTML += `
@@ -15,9 +14,10 @@ fetch('http://localhost:4000/api/v1/blogs')
         <h5>${blog.title}</h5>
         <p>${blog.body.slice(0,200)}</p>
         <p style="text-align: center;">
-        <a class="button" href="">Read More</a></p>
+        <a class="button" href="https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests">Read More</a></p>
     </div>
 
         `
     })
 })
+

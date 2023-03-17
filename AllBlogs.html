@@ -7,6 +7,7 @@
     <title>Capstone Dashboard</title>
     <link rel="stylesheet" href="./assets/css/Dashboard.css">
     <link rel="stylesheet" href="./assets/css/Admin.css">
+    <link rel="stylesheet" href="./assets/css/CreateBlog.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
 </head>
 <body>
@@ -42,7 +43,7 @@
                 <i class="fas fa-calendar"></i>
                 <span class="nav-item">CALENDAR</span>
             </a></li>
-            <li><a href="settings.html">
+            <li><a href="registerUser.html">
                 <i class="fas fa-cog"></i>
                 <span class="nav-item">Settings</span>
             </a></li>
@@ -65,6 +66,20 @@
     <tbody>
     </tbody>
   </table>
+
+  <div class="modelbox" id="modelbox">
+    <form action="" id="newform">
+        <label>Icon Class:</label><br>
+        <input type="text" name="icon" required placeholder="Icon Type" id="icon">
+        
+        <label>Article Title:</label><br>
+        <input type="text" name="title" id="title" required placeholder="Blog title">
+        <label>Article Body:</label><br>
+        <textarea name="body" id="body" required placeholder="Blog body"></textarea>
+        <input type="hidden" name="id">
+        <button class="editblog" onClick="updateBlog()">Update</button>
+    </form>
+  </div>
   <script src="./assets/Js/renderBlogs.js"></script>
 </body>
 </html>
