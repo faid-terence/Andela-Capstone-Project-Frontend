@@ -1,12 +1,11 @@
 const blogTable = document.getElementById("blog-table");
-console.log(blogTable)
 
 //Intreacting with our get blogs end point
 
 fetch('http://localhost:4000/api/v1/blogs')
 .then((response) => response.json())
 .then((blogs) => {
-    console.log(blogs)
+   
     blogs.data.forEach(blog => {
        const row = document.createElement("tr");
        const iconCell = document.createElement("td");
@@ -49,15 +48,14 @@ fetch('http://localhost:4000/api/v1/blogs')
 
 
 function deleteBlog(blogId)  {
-    fetch(`http://localhost:4000/api/v1/blogs`,
+    fetch(`http://localhost:4000/api/v1/blogs/${blogId}`,
     {
         method: "DELETE"
     })
     .then((response) => response.json())
     .then((data) => {
         // functionalities of delete
-        console.log(data)
-        location.reload();
+       
 
     })
     .catch((err) => {
