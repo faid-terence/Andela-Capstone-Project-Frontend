@@ -4,7 +4,7 @@ const blogTable = document.getElementById("blog-table");
 
 //Intreacting with our get blogs end point
 
-fetch('http://localhost:4000/api/v1/blogs')
+fetch('https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs')
 
 .then((response) => response.json())
 .then((blogs) => {
@@ -26,7 +26,7 @@ fetch('http://localhost:4000/api/v1/blogs')
 })
 .catch(err => alert(err))
 function deleteBlog(blogId)  {
-    fetch(`http://localhost:4000/api/v1/blogs/${blogId}`,
+    fetch(`https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs/${blogId}`,
     {
         method: "DELETE"
     })
@@ -57,7 +57,7 @@ modelBox.style.display="none";
 const openModel=async(blogId)=>
 {
     modelBox.style.display="block";
-    const response = await fetch(`http://localhost:4000/api/v1/blogs/${blogId}`);
+    const response = await fetch(`https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs/${blogId}`);
     const blog=await response.json();
     console.log(blog.data._id)
     

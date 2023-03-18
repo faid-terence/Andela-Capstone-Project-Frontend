@@ -15,7 +15,7 @@ form.addEventListener("submit", (event) => {
     const data = {icon, title, body};
 
     // Interaction with My API endpoints
-    fetch( 'http://localhost:4000/api/v1/blogs', {
+    fetch( 'https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs', {
         method: "POST",
         headers: {
             "Content-Type": "application/json"

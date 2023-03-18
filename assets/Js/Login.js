@@ -16,7 +16,7 @@ form.addEventListener("submit", (e) => {
 
     // use fetch method to interact with your login api endpoint 
 
-    fetch('http://localhost:4000/api/v1/login', 
+    fetch('https://lazy-jade-barnacle-suit.cyclic.app/api/v1/login', 
     {
         method: "POST",
         headers: {
