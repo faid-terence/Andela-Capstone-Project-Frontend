@@ -3,34 +3,52 @@ const form = document.getElementById("create-blog-form");
 
 // add event listerner to the form
 
-form.addEventListener("submit", (event) => {
+form.addEventListener('submit', async (event) => {
     event.preventDefault();
-
-    // grab values in our inputs
-    const icon = document.getElementById("icon").value;
-    const title = document.getElementById("title").value;
-    const body = document.getElementById("body").value;
-
-    // Have my values under same object
-    const data = {icon, title, body};
-
-    // Interaction with My API endpoints
-    fetch( 'http://localhost:4000/api/v1/blogs', {
-        method: "POST",
+    const icon = document.getElementById('icon').value;
+    const title = document.getElementById('title').value;
+    const body = document.getElementById('body').value;
+    const data = { icon, title, body };
+    try {
+      const response = await fetch('https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs', {
+        method: 'POST',
         headers: {
-            "Content-Type": "application/json"
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    })
-    .then((response) => {
-        return response.json()
-        
-    })
-    .then((data) => {
-        alert(data.message)
-        location.replace('AllBlogs.html')
+      });
+      if (response.ok) {
+        Toastify({
+            text: "Your blog has been added successfully",
+            duration: 3000,
+            newWindow: true,
+            close: true,
+            gravity: "top",
+            position: "right",
+            backgroundColor: "green",
+            stopOnFocus: true,
+          }).showToast();
+      }
 
-    })
-    .catch(error => alert(error))
-
-});
+    }
+     catch (error) {
+      Toastify({
+        text: `Failed to add blog: ${error.message}`,
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "top",
+        position: "right",
+        backgroundColor: "red",
+        stopOnFocus: true,
+      }).showToast();
+    }
+  });
+  
+  
+  
+  
+  
+  
+  
+  

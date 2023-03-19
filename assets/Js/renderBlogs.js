@@ -4,7 +4,7 @@ const blogTable = document.getElementById("blog-table");
 
 //Intreacting with our get blogs end point
 
-fetch('http://localhost:4000/api/v1/blogs')
+fetch('https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs')
 
 .then((response) => response.json())
 .then((blogs) => {
@@ -26,22 +26,25 @@ fetch('http://localhost:4000/api/v1/blogs')
 })
 .catch(err => alert(err))
 function deleteBlog(blogId)  {
-    fetch(`http://localhost:4000/api/v1/blogs/${blogId}`,
+    fetch(`https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs/${blogId}`,
     {
         method: "DELETE"
     })
     .then((response) => response.json())
     .then((data) => {
         // functionalities of delete
-        location.reload();
+        Toastify({
+          text: "Blog deleted successfully!",
+          backgroundColor: "green",
+        }).showToast();
 
-       
+      
 
     })
     .catch((err) => {
         alert(err)
     });
-
+    
 }
 
 
@@ -57,7 +60,7 @@ modelBox.style.display="none";
 const openModel=async(blogId)=>
 {
     modelBox.style.display="block";
-    const response = await fetch(`http://localhost:4000/api/v1/blogs/${blogId}`);
+    const response = await fetch(`https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs/${blogId}`);
     const blog=await response.json();
     console.log(blog.data._id)
     
@@ -91,11 +94,34 @@ const updateBlog=async()=>
           });
         
     if (response.ok) {
-        form.reset();
-        alert("Your blog has been updated successfully");
+        Toastify({
+          text: "Wow, Blog is Up to date!",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+        }).showToast();
+        
       } else {
         const error = await response.json();
-        alert(`Failed to update blog: ${error.message}`);
+        Toastify({
+          text: "Oops! , Failed to Update a Blog",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+        }).showToast();
+        
       }
     } catch (error) {
       console.error(error);
