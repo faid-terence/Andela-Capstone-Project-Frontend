@@ -2,7 +2,7 @@ const clientBlog = document.getElementById("CLIENT");
 
 // interacting with our get blogs endpoint
 
-fetch('http://localhost:4000/api/v1/blogs')
+fetch('https://lazy-jade-barnacle-suit.cyclic.app/api/v1/blogs')
 .then((response) => response.json())
 .then((blogs) => {
     
