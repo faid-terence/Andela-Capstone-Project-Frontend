@@ -33,15 +33,18 @@ function deleteBlog(blogId)  {
     .then((response) => response.json())
     .then((data) => {
         // functionalities of delete
-        location.reload();
+        Toastify({
+          text: "Blog deleted successfully!",
+          backgroundColor: "green",
+        }).showToast();
 
-       
+      
 
     })
     .catch((err) => {
         alert(err)
     });
-
+    
 }
 
 
@@ -91,11 +94,34 @@ const updateBlog=async()=>
           });
         
     if (response.ok) {
-        form.reset();
-        alert("Your blog has been updated successfully");
+        Toastify({
+          text: "Wow, Blog is Up to date!",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+        }).showToast();
+        
       } else {
         const error = await response.json();
-        alert(`Failed to update blog: ${error.message}`);
+        Toastify({
+          text: "Oops! , Failed to Update a Blog",
+          duration: 3000,
+          newWindow: true,
+          close: true,
+          gravity: "top", // `top` or `bottom`
+          position: "left", // `left`, `center` or `right`
+          stopOnFocus: true, // Prevents dismissing of toast on hover
+          style: {
+            background: "linear-gradient(to right, #00b09b, #96c93d)",
+          },
+        }).showToast();
+        
       }
     } catch (error) {
       console.error(error);

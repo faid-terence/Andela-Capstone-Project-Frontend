@@ -33,7 +33,18 @@ form.addEventListener("submit", (e) => {
             location.href = "/AdminPanel.html"
         }
         else{
-            alert(data.message)
+            
+            Toastify({
+                text: "OOPS!, Please Enter Valid Credentials!",
+                duration: 3000,
+                newWindow: true,
+                close: true,
+                gravity: "top", // `top` or `bottom`
+                position: "right", // `left`, `center` or `right`
+                stopOnFocus: true, // Prevents dismissing of toast on hover
+                backgroundColor: "red"
+                
+              }).showToast();
         }
     })
     .catch(error => alert(error))
