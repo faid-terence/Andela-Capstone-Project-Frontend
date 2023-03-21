@@ -30,7 +30,7 @@ form.addEventListener("submit", (e) => {
         if (data.token) {
             // set our token to LS
             localStorage.setItem("authToken", data.token);
-            location.href = "/AdminPanel.html"
+            location.href = "AdminPanel.html"
         }
         else{
             
