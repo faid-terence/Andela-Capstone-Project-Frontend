@@ -1,4 +1,5 @@
-##Welcome to my portfolio website!##
+**Welcome to my portfolio website!**
+
 This website showcases my skills, experiences, and projects in the field of Software Engineering. I have designed this website to give you a better understanding of my professional background and my expertise.
 
 
@@ -7,6 +8,7 @@ Here are some of the features of my portfolio website:
 #HomePage : 
 
 The home page provides a brief introduction about myself and my work. It also features a navigation bar that allows you to browse through the different sections of the website.
+
 #About-Me :
 
 The "About Me" section provides an in-depth overview of my professional background, skills, and interests. It also features a timeline of my work experience and education.
