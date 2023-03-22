@@ -1,5 +1,5 @@
-##Welcome to my portfolio website!
-This website showcases my skills, experiences, and projects in the field of [insert field]. I have designed this website to give you a better understanding of my professional background and my expertise.
+##Welcome to my portfolio website!##
+This website showcases my skills, experiences, and projects in the field of Software Engineering. I have designed this website to give you a better understanding of my professional background and my expertise.
 
 
 Here are some of the features of my portfolio website:
