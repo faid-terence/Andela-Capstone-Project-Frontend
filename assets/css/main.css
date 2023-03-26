@@ -901,8 +901,21 @@ textarea
     }
     .home .home-img
     {
-        display: none;
+        margin-top: 40px;
+       
     }
+    .home .home-img::after
+{
+    display: none;
+}
+.home .home-img::before
+{
+    display: none;
+}
+.hi{
+   margin-top: -50px;
+   right: 45px;
+}
     #menu
     {
         display: block;
